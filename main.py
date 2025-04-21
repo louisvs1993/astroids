@@ -38,6 +38,11 @@ def main():
             if obj.collision(player):
                 print("Game over!")
                 sys.exit()
+            
+            for shot in shots:
+                if shot.collision(obj):
+                    obj.kill()
+                    shot.kill()
 
         #set background color to black
         screen.fill("black")
